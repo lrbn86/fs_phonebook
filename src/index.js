@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
+const personsArray = [
+  { name: 'Arto Hellas', number: '123898102389018203' },
+  { name: 'Ada Lovelace', number: '10239091203901023' },
+  { name: 'Dan Abramov', number: '123918293819203801' },
+  { name: 'brandon', number: '12938918238901238' }
+]
+//const personsArray = [];
 ReactDOM.render(
+
   <React.StrictMode>
-    <App />
+    <App personsArray={personsArray} />
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

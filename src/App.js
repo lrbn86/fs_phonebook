@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import SearchFilter from './components/SearchFilter';
+import PersonForm from './components/PersonForm';
+import NumbersList from './components/NumbersList';
 
-function App() {
+const App = ({ personsArray }) => {
+
+  const [persons, setPersons] = useState(personsArray);
+  const [newName, setNewName] = useState('');
+  const [newNumber, setNewNumber] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h2>Phonebook</h2>
+      <SearchFilter personsArray={personsArray} persons={persons} setPersons={setPersons} />
+      <PersonForm personsArray={personsArray} persons={persons} setPersons={setPersons} newName={newName} setNewName={setNewName} newNumber={newNumber} setNewNumber={setNewNumber} />
+      <NumbersList persons={persons} />
+    </>
   );
 }
 
