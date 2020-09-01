@@ -11,7 +11,7 @@ const App = ({ personsArray }) => {
 
   return (
     <>
-      <h2>Phonebook</h2>
+      <h2>Phonebook App</h2>
       <SearchFilter personsArray={personsArray} persons={persons} setPersons={setPersons} />
       <PersonForm personsArray={personsArray} persons={persons} setPersons={setPersons} newName={newName} setNewName={setNewName} newNumber={newNumber} setNewNumber={setNewNumber} />
       <NumbersList persons={persons} />
